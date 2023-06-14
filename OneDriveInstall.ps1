@@ -56,7 +56,7 @@ If ($Install)
         {
             Write-Eventlog -LogName Application -Source $logSource -EntryType Information -EventId 1 -Message "Microsoft OneDrive is installed on the computer. Installed version: $installedVersion"
         }
-	} 
+    } 
     catch [exception] 
     {
         Write-Eventlog -LogName Application -Source $logSource -EntryType Information -EventId 1 -Message "An error occured while installing OneDrive client"
@@ -75,7 +75,7 @@ If ($Uninstall)
             Remove-Item $destinationPath -recurse
             Write-Eventlog -LogName Application -Source $logSource -EntryType Information -EventId 2 -Message "The OneDrive has been sucessfully removed."
             }
-	} 
+    } 
     catch [exception] 
     {
         Write-Eventlog -LogName Application -Source $logSource -EntryType Information -EventId 1 -Message "An error occured while uninstalling OneDrive client."

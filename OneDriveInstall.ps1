@@ -39,7 +39,7 @@ catch
 ### Installation
 If ($Install)
 {
-	try 
+    try 
     {
         if ($targetVersion -gt $installedVersion)
             {
@@ -60,12 +60,13 @@ If ($Install)
     catch [exception] 
     {
         Write-Eventlog -LogName Application -Source $logSource -EntryType Information -EventId 1 -Message "An error occured while installing OneDrive client"
-	}
+	Exit
+    }
 }
 ### Uninstallation
 If ($Uninstall)
 {
-	try 
+    try 
     {
         if (Test-Path ($destinationPath))
             {
@@ -78,5 +79,6 @@ If ($Uninstall)
     catch [exception] 
     {
         Write-Eventlog -LogName Application -Source $logSource -EntryType Information -EventId 1 -Message "An error occured while uninstalling OneDrive client."
-	}
+	Exit
+    }
 }
